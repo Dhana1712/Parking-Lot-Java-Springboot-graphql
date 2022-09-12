@@ -1,0 +1,91 @@
+input ParkingLotInput{
+    id:String
+    name:String
+    description:String
+
+}
+
+input ParkingFloorInput{
+     floorNo:String
+     parkingLotId:String
+}
+
+input ParkingSpotTypeInput{
+    parkingSpotType:String
+    farePerHour:Int
+}
+
+input ParkingSpotInput{
+    parkingSpotNo:String
+    parkingFloorNo:String
+    parkingLotId:String
+    parkingSpotType:String
+    parkingSpotQuota:ParkingSpotQuota
+    status:ParkingSpotStatus
+}
+input ParkingSpotDelete{
+    parkingSpotNo:String
+    parkingFloorNo:String
+    parkingLotId:String
+    parkingSpotType:String
+    parkingSpotQuota:ParkingSpotQuota
+
+}
+
+input PanelInput{
+    panelName:String
+    panelType:PanelType
+    parkingLotId:String
+}
+
+input EntryInput{
+    vehicleNo:String,
+    vehicleType:String,
+    parkingSpotQuota:ParkingSpotQuota,
+    entryPanelId:String,
+    parkingLotId:String,
+}
+input ExitInput{
+    ticketId:Int
+    exitPanelId:Int
+}
+
+input UnPlugVehicle{
+    ticketId:String
+    energyConsumptionCost:String
+}
+
+enum ParkingSpotStatus{
+    AVAILABLE,
+    OCCUPIED,
+    UNDER_MAINTENANCE
+}
+
+enum PanelType{
+    EXIT,
+    ENTRY
+}
+
+enum PaymentMethod{
+    CASH,
+    CARD
+}
+enum PaymentStatus{
+    SUCCESS,
+    FAILED,
+}
+enum ParkingSpotQuota{
+    HANDICAPPED,
+    ELECTRIC,
+    HANDIELECTRIC,
+    GENERAL
+}
+
+enum ElectricStatus {
+    POWERON,
+    POWEROFF
+
+}
+
+
+

@@ -1,0 +1,67 @@
+type ParkingLot{
+    id:String
+    name:String
+    description:String
+    parkingFloors:[ParkingFloor]
+
+}
+type ParkingFloor{
+    id:Int
+    floorNo:Int
+    parkingLot:ParkingLot
+}
+
+type ParkingSpotType{
+    parkingSpotType:String
+    farePerHour:Int
+}
+
+type ParkingSpot{
+    id:Int
+    parkingSpotNo:Int
+    parkingFloor:ParkingFloor
+    parkingSpotType:ParkingSpotType
+    parkingSpotQuota:ParkingSpotQuota
+    status:String
+}
+
+type EntryExitPanel{
+    id:Int
+    panelName:String
+    panelType:String
+    parkingLot:ParkingLot
+}
+type Ticket{
+    id:Int
+    vehicleNumber:String
+    vehicleType:String
+    entryPanel:EntryExitPanel
+    exitPanel:EntryExitPanel
+    parkingLot:ParkingLot
+    parkingSpot:ParkingSpot
+    entryTime:String
+    exitTime:String
+    parkingHours:Float
+    parkingFare:Float
+    electricBill:ElectricBill
+    payment:Payment
+}
+
+type ElectricBill{
+    id:Int
+    energyConsumptionCost:Float
+    status:ElectricStatus
+}
+
+
+
+type Payment{
+    id:Int
+    amount:Float
+    method:PaymentMethod
+    paidAt:String
+    status:PaymentStatus
+    ticket:Ticket
+}
+
+

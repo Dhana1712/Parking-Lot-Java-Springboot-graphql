@@ -1,0 +1,20 @@
+type Mutation{
+    createParkingLot(parkingLotInput:ParkingLotInput):ParkingLot
+    deleteParkingLot(id:String!):Boolean
+    addParkingFloor(parkingFloorInput:ParkingFloorInput):ParkingFloor
+    removeParkingFloor(parkingFloorInput:ParkingFloorInput):Boolean
+    addParkingSpotType(parkingSpotTypeInput:ParkingSpotTypeInput):ParkingSpotType
+    removeParkingSpotType(parkingSpotType:String):Boolean
+    addParkingSpot(parkingSpotInput:ParkingSpotInput):ParkingSpot
+    removeParkingSpot(parkingSpotDelete:ParkingSpotDelete):Boolean
+    addEntryExitPanel(panelInput:PanelInput):EntryExitPanel
+    removeEntryExitPanel(panelInput:PanelInput):Boolean
+    parkVehicle(entryInput:EntryInput):Ticket
+    unParkVehicle(exitInput:ExitInput):Ticket
+    cashPayment(ticketId:Int!):Payment
+    cardPayment(ticketId:Int!):Payment
+    chargeVehicle(ticketId:Int!):ElectricBill
+    unPlugVehicle(unPlugInput:UnPlugVehicle):ElectricBill
+
+    nestedInputTypes(parkingSpotStatus:ParkingSpotStatus,panelType:PanelType,parkingSpotQuota:ParkingSpotQuota,electricStatus:ElectricStatus):Boolean
+}

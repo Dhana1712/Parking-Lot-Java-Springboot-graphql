@@ -1,0 +1,9 @@
+type Query{
+    getParkingLot(id:String):ParkingLot
+    getAllParkingLot:[ParkingLot]
+    getParkingFloor(id:Int):ParkingFloor
+    getAllParkingFloor:[ParkingFloor]
+    getParkingSpotType(parkingSpotType:String):ParkingSpotType
+    getAllParkingSpotType:[ParkingSpotType]
+    getTicket(ticketId:Int):Ticket
+}
